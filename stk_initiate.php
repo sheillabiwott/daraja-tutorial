@@ -16,10 +16,10 @@ if(isset($_POST['submit'])){
   
   
    $PartyA = $_POST['phone']; // This is your phone number, 
-  $AccountReference = '2255';
+  $AccountReference = 'Test';
   $TransactionDesc = 'Test Payment';
   $Amount = $_POST['amount'];;
- 
+
   # Get the timestamp, format YYYYmmddhms -> 20181004151020
   $Timestamp = date('YmdHis');    
   
@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
   # callback url
-  $CallBackURL = 'http://localhost/Daraja-2.0-C2B-Intergration/callback.php';  
+  $CallBackURL = 'https://intense-refuge-07538-2786e3c2f2d0.herokuapp.com/callback.php';  
 
   $curl = curl_init($access_token_url);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
